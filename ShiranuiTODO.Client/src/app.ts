@@ -1,7 +1,12 @@
-import { h, app, View } from "hyperapp";
+import { app, h, View } from "hyperapp";
+import { Actions } from "./Actions/Action";
+import { InitialState } from "./States/";
+import { view } from "./Views/View";
 
+/*
 class State {
     public constructor(public readonly count: number) {
+        console.log("CSTR CALLED");
     }
 }
 
@@ -22,5 +27,6 @@ const view: View<State, Actions> = (state, actions) => {
         h("button", { onclick: actions.up }, "+")
     ]);
 }
+*/
 
-const mainApp = app(new State(0), new Actions(), view, document.body);
+const mainApp = app(InitialState, Actions, view, document.body);
