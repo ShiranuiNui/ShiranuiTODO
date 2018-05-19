@@ -1,19 +1,18 @@
 import * as React from "react";
+import { TodoList } from "./Components/TodoList";
 
-export interface IHelloState { name: string; }
+export interface ITodoState { todolist: string[]; }
 
-class Application extends React.Component<{}, IHelloState> {
+export default class Application extends React.Component<{}, ITodoState> {
     constructor() {
         super({});
-        this.state = { name: "HELLO REACT WORLD" };
+        this.state = { todolist: ["私はしぶりんめう", "ぬい"] };
     }
     public render(): JSX.Element {
         return (
             <div>
-                <h1>{this.state.name}</h1>
+                <TodoList todolist={this.state.todolist} />
             </div>
         );
     }
 }
-
-export default Application;
